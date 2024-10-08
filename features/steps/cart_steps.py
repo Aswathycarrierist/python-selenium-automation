@@ -11,9 +11,10 @@ from time import sleep
 
 @then('verify cart empty message shown')
 def verify_cart_empty(context):
-    expected_text ='Your cart is empty'
-    actual_text = context.driver.find_element(By.CSS_SELECTOR,"[data-test='boxEmptyMsg']").text
-    assert expected_text == actual_text, f'Expected{expected_text}did not match actual{actual_text}'
+    context.app.cart_page.verify_cart_empty()
+    #expected_text ='Your cart is empty'
+   # actual_text = context.driver.find_element(By.CSS_SELECTOR,"[data-test='boxEmptyMsg']").text
+   # assert expected_text == actual_text, f'Expected{expected_text}did not match actual{actual_text}'
 
 
 #@then verify cart has correct product

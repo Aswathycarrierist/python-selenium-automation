@@ -11,11 +11,10 @@ from selenium.webdriver.support import expected_conditions as EC
 #     context.driver.find_element(By.ID, 'search').send_keys(product)
 #     # Search button => click
 #     context.driver.find_element(By.XPATH, "//button[@data-test='@web/Search/SearchButton']").click()
-#     sleep(5)  # wait for search results page to load
-ADD_TO_CART_BTN = (By.CSS_SELECTOR,"[id*='addToCartButton']")
-# ADD_TO_CART_BTN = (By.XPATH, '/html[1]/body[1]/div[1]/div[2]/main[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/button[1]')
+#     sleep(5)  # wait for search results page to load# /button[1]')
 ADD_TO_CART_BTN_SIDE_NAV = (By.CSS_SELECTOR, "[data-test='content-wrapper'] [id*='addToCart']")
 SIDE_NAV_PRODUCT_NAME = (By.CSS_SELECTOR, "[data-test='content-wrapper'] h4")
+ADD_TO_CART_BTN = (By.CSS_SELECTOR,"[id*='addToCartButton']")
 PRODUCT_TITLE = (By.CSS_SELECTOR, "[data-test='product-title']")
 LISTINGS = (By.CSS_SELECTOR, "[data-test='@web/site-top-of-funnel/ProductCardWrapper']")
 PRODUCT_IMG=(By.CSS_SELECTOR,"img")

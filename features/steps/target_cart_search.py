@@ -5,7 +5,8 @@ from time import sleep
 
 @when('click on the cart icon')
 def click_cart_icon(context):
-    context.driver.find_element(By.CSS_SELECTOR,"[data-test='@web/CartIcon']").click()
+    context.app.header.click_cart()
+   # context.driver.find_element(By.CSS_SELECTOR,"[data-test='@web/CartIcon']").click()
 
 
 # @then('verify cart empty message shown')
