@@ -5,7 +5,7 @@ Feature: test for target search functionality
     Given open target main page
     When search for pencil
     Then verify correct search result shown for pencil
-
+    Then verify product pencil in URL
 
   Scenario:user can search for a product2
     Given open target main page
@@ -13,7 +13,7 @@ Feature: test for target search functionality
     Then  verify correct search result shown for mug
 
 
-  Scenario Outline:user can search for a product
+  Scenario Outline:user can search for a product3
     Given open target main page
     When search for <search_word>
     Then verify correct search result shown for <search_word>

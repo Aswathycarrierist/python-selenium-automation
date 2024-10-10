@@ -19,18 +19,21 @@ def click_cart_icon(context):
 #Scenario2
 @when('click on the sign in button')
 def  click_on_the_sign_in(context):
-    context.driver.find_element(By.XPATH,"//a[@data-test='@web/AccountLink']").click()
+    context.app.header.click_sign_in_button()
+    #context.driver.find_element(By.XPATH,"//a[@data-test='@web/AccountLink']").click()
     sleep(2)
 
 
-@when('click sign in from side')
+@when('click sigh in from side navigation menu')
 def click_sign_in(context):
-    context.driver.find_element(By.XPATH, "//a[@data-test='accountNav-signIn']").click()
+    context.app.header.click_sign_in_nav_button()
+    #context.driver.find_element(By.XPATH, "//a[@data-test='accountNav-signIn']").click()
     sleep(3)
 
 
 @then('verify sign in page opened')
-def verify_sign_in(context):
+def verify_signin_opened(context):
     expected_text = 'Sign into your Target account'
-    actual_text = context.driver.find_element(By.XPATH, "//h1[@class='sc-fe064f5c-0 sc-315b8ab9-2 WObnm gClYfs']").text
+    actual_text = context.driver.find_element(By.XPATH,"//h1/span[text()='Sign into your Target account']").text
+
     assert expected_text == actual_text, f'Expected {expected_text} did not match actual {actual_text}'

@@ -12,20 +12,21 @@ from selenium.webdriver.support import expected_conditions as EC
 #     # Search button => click
 #     context.driver.find_element(By.XPATH, "//button[@data-test='@web/Search/SearchButton']").click()
 #     sleep(5)  # wait for search results page to load# /button[1]')
-ADD_TO_CART_BTN_SIDE_NAV = (By.CSS_SELECTOR, "[data-test='content-wrapper'] [id*='addToCart']")
+# O_CART_BTN_SIDE_NAV = (By.CSS_SELECTOR, "[data-test='content-wrapper'] [id*='addToCart']")ADD_T
 SIDE_NAV_PRODUCT_NAME = (By.CSS_SELECTOR, "[data-test='content-wrapper'] h4")
-ADD_TO_CART_BTN = (By.CSS_SELECTOR,"[id*='addToCartButton']")
+#ADD_TO_CART_BTN = (By.CSS_SELECTOR,"[id*='addToCartButton']")
 PRODUCT_TITLE = (By.CSS_SELECTOR, "[data-test='product-title']")
 LISTINGS = (By.CSS_SELECTOR, "[data-test='@web/site-top-of-funnel/ProductCardWrapper']")
 PRODUCT_IMG=(By.CSS_SELECTOR,"img")
 
 @when('click on add to the cart button')
 def click_cart_icon(context):
+    context.app.main_page.click_cart_icon()
     sleep(15)
     # # context.driver.find_element(*ADD_TO_CART_BTN).click()
     # context.driver.wait.until(EC.visibility_of_element_located(ADD_TO_CART_BTN))
-    context.driver.find_element(*ADD_TO_CART_BTN).click()
-    context.driver.wait.until(EC.visibility_of_element_located(SIDE_NAV_PRODUCT_NAME))
+    #context.driver.find_element(*ADD_TO_CART_BTN).click()
+    #context.driver.wait.until(EC.visibility_of_element_located(SIDE_NAV_PRODUCT_NAME))
 
     # add_to_cart_btn.click()
 
@@ -36,7 +37,8 @@ def click_cart_icon(context):
 
 @when('confirm add to cart button from side navigation')
 def side_navigation_click(context):
-    context.driver.find_element(*ADD_TO_CART_BTN_SIDE_NAV).click()
+    context.app.main_page.side_navigation_click()
+   # context.driver.find_element(*ADD_TO_CART_BTN_SIDE_NAV).click()
     sleep(5)
 #
 # @then('verify correct search result shown for{product}')
@@ -46,9 +48,10 @@ def side_navigation_click(context):
 
 
 @when('click view cart and check out')
-def   click_the_view_cart_check_out(context):
+def click_the_view_cart_check_out(context):
+      context.app.cart_page.click_the_view_cart_check_out()
 
-      context.driver.find_element(By.CSS_SELECTOR,"[href='/cart']").click()
+     # context.driver.find_element(By.CSS_SELECTOR,"[href='/cart']").click()
       sleep(5)
 
 

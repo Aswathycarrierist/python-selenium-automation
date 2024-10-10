@@ -9,6 +9,6 @@ Feature:  user can see target cart empty messege
   Scenario: verify sign in page opened
     Given open target main page
     When click on the sign in button
-    When click sign in from side
+    When click sigh in from side navigation menu
     Then verify sign in page opened
 

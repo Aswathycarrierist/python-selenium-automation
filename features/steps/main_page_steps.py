@@ -35,3 +35,7 @@ def verify_results(context, product):
    # actual_result = context.driver.find_element(By.XPATH, "//div[@data-test='resultsHeading']").text
 
    # assert product in actual_result, f'Expected {product}, got actual {actual_result}'
+
+@then('verify product {product} in URL')
+def verify_results_url(context, product):
+    context.app.search_results_page.verify_results(product)
