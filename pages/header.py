@@ -8,7 +8,7 @@ class Header(Page):
     SEARCH_FIELD = (By.ID, 'search')
     SEARCH_BTN =  (By.XPATH, "//button[@data-test='@web/Search/SearchButton']")
     SIGN_IN_BTN = (By.XPATH,"//a[@data-test='@web/AccountLink']")
-    SIDE_NAV_SIGN_IN = (By.XPATH, "//a[@data-test='accountNav-signIn']")
+    SIDE_NAV_SIGN_IN = (By.XPATH, "//button[@data-test='accountNav-signIn']")
     def search_product(self, product):
         self.input_text(product, *self.SEARCH_FIELD)
         # self.find_element(*self.SEARCH_FIELD).send_keys(product)

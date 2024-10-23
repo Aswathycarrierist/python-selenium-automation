@@ -8,6 +8,29 @@ from time import sleep
 def open_target_sign_in(context):
     context.app.sign_in_page.open_target_sign_in_page()
 
+@when('Enter incorrect email and password')
+def enter_incorrect_email_password(context):
+    context.app.sign_in_page.enter_email()
+    sleep(2)
+    context.app.sign_in_page.enter_password()
+    # email_field = driver.find_element(By.ID,"username")
+    # email_field.send_keys(ammu@gmail.com)
+    #
+    # password_field = driver.find_element(By.ID,"password")
+    # password_field.send_keys('ammu1ammu2ammu3')
+
+
+@when('Click log in button')
+def click_sign_in_button(context):
+    context.app.sign_in_page.click_log_in_button()
+
+
+
+@then("Verify that 'We can't find your account' message is shown")
+def verify_cant_find_your_account(context):
+    actual_message = context.driver.find_element(By.CSS_SELECTOR,"[data-test='authAlertDisplay']").text
+    expected_message = 'That password is incorrect.'
+    assert actual_message == expected_message, f"Expected message: '{expected_message}', but got: '{actual_message}'"
 
 @when('Store original window')
 def store_original_window(context):
